@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button>Crée une page</button>
+        <button >Crée une page</button>
     </div>
 </template>
 <script>
