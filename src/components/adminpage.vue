@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button >Crée une page</button>
+        <router-link to="/admin/createpost">Crée une page</router-link>
     </div>
 </template>
 <script>

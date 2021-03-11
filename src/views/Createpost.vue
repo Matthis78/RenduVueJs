@@ -1,3 +1,16 @@
 <template>
-    <h1>Crée une nouvelle page de blog</h1>
+    <createpage></createpage>
 </template>
+<script>
+import createpage from '../components/createpage.vue'
+    export default {
+        components: {
+            createpage,
+        },
+        name: 'createpost',
+    }
+</script>
+<style scoped>
+    /*Contenue Createpost*/
+   
+</style>
