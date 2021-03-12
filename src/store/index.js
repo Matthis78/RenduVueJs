@@ -7,12 +7,8 @@ export default createStore({
     blogs: []
   },
   mutations: {
-    createNewPage(state, Title,metaTitle,metaDescription,Corps) {
-      state.metaPost = Title
-      state.metaPost = metaTitle
-      state.metaPost = metaDescription
-      state.metaPost = Corps     
- 
+    createNewPage(state, post) {
+      state.blogs.push(post);
     },
     // actions: {},
     // modules: {}

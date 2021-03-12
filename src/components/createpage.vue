@@ -6,15 +6,15 @@
         <form action="" method="get" class="form">
             <div class="form">
                 <label for="name">Titre de la page </label>
-                <input @v-model="metaPost" type="text" name="name" id="name" required value="Title">
+                <input @v-model="metaName" type="text" name="name" id="name" required value="Title">
             </div>
             <div class="form">
                 <label for="text">Meta title </label>
-                <input @v-model="metaPost" type="text" name="text" id="text" required value="metaTitle">
+                <input @v-model="metaTitle" type="text" name="text" id="text" required value="metaTitle">
             </div>
             <div class="form">
                 <label for="text">Meta description </label>
-                <input @v-model="metaPost" type="text" name="text" id="text" required value="metaDescription">
+                <input @v-model="metaDesc" type="text" name="text" id="text" required value="metaDescription">
             </div>
             <div class="form">
                 <label for="text">Corps du post </label>
@@ -32,13 +32,31 @@
 <script>
     export default {
         name: 'createpage',
+        data() {
+    return {
+      allPost: this.$store.state.blogs,
+      metaName: '',
+      metaTitle: '',
+      metaDesc: '',
+      metaPost: '',
+      image: '',
+    }
+  },
         methods: {
-            createNewPage(e) {
-             this.$store.commit('createNewPage', e.target.Title,e.target.metaTitle,e.target.metaDescription,e.target.Corps)
+            createNewPage() {
+                let post = {
+                    name : this.metaName,
+                    title : this.metaTitle,
+                    desc : this.metaDesc,
+                    post : this.metaPost,
+                    img : this.image
+                }
+             this.$store.commit('createNewPage', post)
              }
              
         }
         }
+        
 </script>
 <style scoped>
     /*Createpost*/
