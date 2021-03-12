@@ -3,27 +3,18 @@
         <h1>Créer une nouvelle page de blog</h1>
     </div>
     <div class="field">
-        <form action="" method="get" class="form">
-            <div class="form">
+        <div class="form">
+            
                 <label for="name">Titre de la page </label>
-                <input @v-model="metaName" type="text" name="name" id="name" required value="Title">
-            </div>
-            <div class="form">
+                <input v-model="metaName" type="text" name="name"  required placeholder="Title">
                 <label for="text">Meta title </label>
-                <input @v-model="metaTitle" type="text" name="text" id="text" required value="metaTitle">
-            </div>
-            <div class="form">
+                <input v-model="metaTitle" type="text" name="text" required placeholder="metaTitle">
                 <label for="text">Meta description </label>
-                <input @v-model="metaDesc" type="text" name="text" id="text" required value="metaDescription">
-            </div>
-            <div class="form">
+                <input v-model="metaDesc" type="text" name="text"  required placeholder="metaDescription">
                 <label for="text">Corps du post </label>
-                <textarea @v-model="metaPost" id="singlepost" name="singlepost" rows="5" cols="33" value="Corps"></textarea>
-            </div>
-            <div class="form">
-                <input type="submit" @click="createNewPage()" value="Crée la page">
-            </div>
-        </form>
+                <textarea v-model="metaContent" name="singlepost" rows="5" cols="33" placeholder="Corps"></textarea>
+                <button @click="createNewPage()">Crée la page</button>
+        </div>
         <img @v-model="image">
         <p>Ajouter une image</p>
     </div>
@@ -34,11 +25,10 @@
         name: 'createpage',
         data() {
     return {
-      allPost: this.$store.state.blogs,
       metaName: '',
       metaTitle: '',
       metaDesc: '',
-      metaPost: '',
+      metaContent: '',
       image: '',
     }
   },
@@ -48,10 +38,11 @@
                     name : this.metaName,
                     title : this.metaTitle,
                     desc : this.metaDesc,
-                    post : this.metaPost,
+                    content : this.metaContent,
                     img : this.image
                 }
              this.$store.commit('createNewPage', post)
+             this.$router.push('/admin')
              }
              
         }
@@ -67,13 +58,7 @@
         margin-top: 10vh;
     }
 
-    form.form {
-        display: table;
-    }
-
-    div.form {
-        display: table-row;
-    }
+    
 
     label,
     input {

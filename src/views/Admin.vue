@@ -19,8 +19,8 @@
 </script>
 <style scoped>
 .center {
-    display: flex;
-    justify-content: center;
+    display: table;
+    margin: 0 auto;
 }
 
 </style>

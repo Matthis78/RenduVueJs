@@ -4,7 +4,13 @@ import {
 
 export default createStore({
   state: {
-    blogs: []
+    blogs: [{
+      name: 'name',
+      title: 'this.metaTitle',
+      desc: 'metaDesc',
+      content: 'metaPost',
+      img: 'image'
+    }]
   },
   mutations: {
     createNewPage(state, post) {

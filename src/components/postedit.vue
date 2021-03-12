@@ -1,13 +1,15 @@
 <template>
-    <div class="container">
+
+    <div class="container" v-for="post in allPost" :key="post">
+
         <div>
-            <img class="fit-picture" src="../assets/logo.png" alt="test">
+            <img class="fit-picture" :src="post.img">
         </div>
         <div>
-            <p>fyvgbuhjaknzafeazifbafliheakfbafuehfjbafleufjhakbjfelauhfjabkfauhfjab fafjlh dazhifbaf</p>
+            <p>{{ post.content }} </p>
         </div>
         <div>
-            <button class="edit">Editer</button>
+            <button @click="test" class="edit">Editer</button>
             <button class="delete"><i class="fas fa-trash fa-2x"></i></button>
         </div>
     </div>
@@ -15,6 +17,17 @@
 <script>
     export default {
         name: 'postedit',
+
+        data() {
+            return {
+                allPost: this.$store.state.blogs,
+            }
+        },
+        methods: {
+            test() {
+                console.log(this.allPost);
+            }
+        },
     }
 </script>
 <style scoped>
@@ -30,18 +43,20 @@
         background-color: red;
         color: #fff;
     }
+
     .container {
         display: flex;
         justify-content: center;
         border: solid grey 1px;
-        max-width: 80%;
-        align-items:center;
+        align-items: center;
         padding: 20px;
         margin-top: 30px;
     }
-    .container p {
+
+    .p {
         max-width: 80%;
     }
+
     .edit {
         margin-right: 20px;
         font-size: 20px;
