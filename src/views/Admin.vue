@@ -1,16 +1,16 @@
 <template>
     <adminpage></adminpage>
     <div class="center">
-    <postedit></postedit>
+    <blogpost></blogpost>
     </div>
 </template>
 <script>
     import adminpage from '../components/adminpage.vue'
-    import postedit from '../components/postedit'
+    import blogpost from '../components/blogpost'
     export default {
         components: {
             adminpage,
-            postedit,
+            blogpost,
         },
         name: "admin",
 

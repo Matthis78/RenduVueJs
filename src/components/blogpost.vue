@@ -7,16 +7,20 @@
         </div>
         <div>
             <p>{{ post.content }} </p>
+            <p>{{ post.title }} </p>
+            <p>{{ post.name }} </p>
+            <p>{{ post.desc }} </p>
         </div>
         <div>
-            <button @click="test" class="edit">Editer</button>
             <button class="delete"><i class="fas fa-trash fa-2x"></i></button>
         </div>
+        <editpost :id="post.id"></editpost>
     </div>
 </template>
 <script>
+import editpost from '@/components/editpost.vue'
     export default {
-        name: 'postedit',
+        name: 'blogpost',
 
         data() {
             return {
@@ -24,10 +28,13 @@
             }
         },
         methods: {
-            test() {
-                console.log(this.allPost);
+            showEditPost() {
+                
             }
         },
+        components : {
+            editpost,
+        }
     }
 </script>
 <style scoped>

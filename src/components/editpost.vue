@@ -1,19 +1,15 @@
 <template>
-    <div>
-        <h1>Créer une nouvelle page de blog</h1>
-    </div>
-    <div class="field">
+    <button @click="edit()"> editer</button>
+    <div class="field" :style="{display: show}">
         <div class="form">
 
-            <label for="name">Titre de la page </label>
-            <input v-model="metaName" type="text" name="name" required placeholder="Title">
             <label for="text">Meta title </label>
             <input v-model="metaTitle" type="text" name="text" required placeholder="metaTitle">
             <label for="text">Meta description </label>
             <input v-model="metaDesc" type="text" name="text" required placeholder="metaDescription">
             <label for="text">Corps du post </label>
             <textarea v-model="metaContent" name="singlepost" rows="5" cols="33" placeholder="Corps"></textarea>
-            <button @click="createNewPage()">Crée la page</button>
+            <button @click="editPage(id)">Editer la page </button>
         </div>
         <img @v-model="image">
         <p>Ajouter une image</p>
@@ -22,7 +18,8 @@
 </template>
 <script>
     export default {
-        name: 'createpage',
+        name: 'editpost',
+        props : ['id'],
         data() {
             return {
                 metaName: '',
@@ -30,21 +27,32 @@
                 metaDesc: '',
                 metaContent: '',
                 image: '',
+                show : 'none',
+                
             }
         },
         methods: {
-            createNewPage() {
+            editPage(id) {
                 let post = {
                     name: this.metaName,
                     title: this.metaTitle,
                     desc: this.metaDesc,
                     content: this.metaContent,
                     img: this.image,
-                    id : this.$store.state.blogs.length
-
+                    id : id
                 }
-                this.$store.commit('createNewPage', post)
-                this.$router.push('/admin')
+                this.$store.commit('updatePost', post);
+            },
+            edit(){
+                
+
+                if(this.show === 'none'){
+                    this.show = 'block';
+                }
+                else{
+                    this.show = 'none';
+                }
+
             }
 
         }
