@@ -4,16 +4,16 @@
     </div>
     <div class="field">
         <div class="form">
-            
-                <label for="name">Titre de la page </label>
-                <input v-model="metaName" type="text" name="name"  required placeholder="Title">
-                <label for="text">Meta title </label>
-                <input v-model="metaTitle" type="text" name="text" required placeholder="metaTitle">
-                <label for="text">Meta description </label>
-                <input v-model="metaDesc" type="text" name="text"  required placeholder="metaDescription">
-                <label for="text">Corps du post </label>
-                <textarea v-model="metaContent" name="singlepost" rows="5" cols="33" placeholder="Corps"></textarea>
-                <button @click="createNewPage()">Crée la page</button>
+
+            <label for="name">Titre de la page </label>
+            <input v-model="metaName" type="text" name="name" required placeholder="Title">
+            <label for="text">Meta title </label>
+            <input v-model="metaTitle" type="text" name="text" required placeholder="metaTitle">
+            <label for="text">Meta description </label>
+            <input v-model="metaDesc" type="text" name="text" required placeholder="metaDescription">
+            <label for="text">Corps du post </label>
+            <textarea v-model="metaContent" name="singlepost" rows="5" cols="33" placeholder="Corps"></textarea>
+            <button @click="createNewPage()">Crée la page</button>
         </div>
         <img @v-model="image">
         <p>Ajouter une image</p>
@@ -24,30 +24,29 @@
     export default {
         name: 'createpage',
         data() {
-    return {
-      metaName: '',
-      metaTitle: '',
-      metaDesc: '',
-      metaContent: '',
-      image: '',
-    }
-  },
+            return {
+                metaName: '',
+                metaTitle: '',
+                metaDesc: '',
+                metaContent: '',
+                image: '',
+            }
+        },
         methods: {
             createNewPage() {
                 let post = {
-                    name : this.metaName,
-                    title : this.metaTitle,
-                    desc : this.metaDesc,
-                    content : this.metaContent,
-                    img : this.image
+                    name: this.metaName,
+                    title: this.metaTitle,
+                    desc: this.metaDesc,
+                    content: this.metaContent,
+                    img: this.image
                 }
-             this.$store.commit('createNewPage', post)
-             this.$router.push('/admin')
-             }
-             
+                this.$store.commit('createNewPage', post)
+                this.$router.push('/admin')
+            }
+
         }
-        }
-        
+    }
 </script>
 <style scoped>
     /*Createpost*/
@@ -58,7 +57,7 @@
         margin-top: 10vh;
     }
 
-    
+
 
     label,
     input {

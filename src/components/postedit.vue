@@ -3,7 +3,7 @@
     <div class="container" v-for="post in allPost" :key="post">
 
         <div>
-            <img class="fit-picture" :src="post.img">
+            <img class="fit-picture" :src="post.img || '../assets/vuejs.png'">
         </div>
         <div>
             <p>{{ post.content }} </p>
