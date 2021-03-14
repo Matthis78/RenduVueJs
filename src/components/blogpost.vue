@@ -12,7 +12,7 @@
             <p>{{ post.desc }} </p>
         </div>
         <div>
-            <button class="delete"><i class="fas fa-trash fa-2x"></i></button>
+            <button class="delete" @remove="removeItems"><i class="fas fa-trash fa-2x"></i></button>
         </div>
         <editpost :id="post.id"></editpost>
     </div>
@@ -28,9 +28,8 @@ import editpost from '@/components/editpost.vue'
             }
         },
         methods: {
-            showEditPost() {
-                
-            }
+            
+            
         },
         components : {
             editpost,
