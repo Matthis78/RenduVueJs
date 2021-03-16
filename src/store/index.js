@@ -26,18 +26,14 @@ export default createStore({
       state.blogs[post.id] = post;
     },
 
-    //Essaie pour delete
+    //Delete
 
 
-  //   removeItems(state, post){
-  //     for(let i = 0; i < state.blogs.length; i++){
-  //       const die = state.blogs[i].id;
-  //       state.blogs[i].id.splice(die, 1)
-  //       state.blogs[i] = post;
+    removeItems(state, post){
+        state.blogs.splice(state.blogs.indexOf(post), 1)
 
-  //     }
-      
-  // }
+      }
+
     // actions: {},
     // modules: {}
   }

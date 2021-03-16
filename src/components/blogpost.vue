@@ -12,7 +12,7 @@
             <p>{{ post.desc }} </p>
         </div>
         <div>
-            <button class="delete" @remove="removeItems"><i class="fas fa-trash fa-2x"></i></button>
+            <button class="delete" @click="removeItems(post)"><i class="fas fa-trash fa-2x"></i></button>
         </div>
         <editpost :id="post.id"></editpost>
     </div>
@@ -28,7 +28,9 @@ import editpost from '@/components/editpost.vue'
             }
         },
         methods: {
-            
+            removeItems(post){
+                this.$store.commit('removeItems', post)
+            }
             
         },
         components : {
