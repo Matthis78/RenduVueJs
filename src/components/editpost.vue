@@ -1,5 +1,5 @@
 <template>
-    <button @click="edit()"> editer</button>
+    <button class="edit" @click="edit()"> editer</button>
     <div class="field" :style="{display: show}">
         <div class="form">
 

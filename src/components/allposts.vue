@@ -11,31 +11,18 @@
             <p>{{ post.name }} </p>
             <p>{{ post.desc }} </p>
         </div>
-        <div>
-            <button class="delete" @click="removeItems(post)"><i class="fas fa-trash fa-2x"></i></button>
-        </div>
-        <editpost :id="post.id"></editpost>
+        <router-link :to="{name: 'singlePost', params:{id:post.id}}">Voir plus</router-link>
     </div>
 </template>
 <script>
-import editpost from '@/components/editpost.vue'
     export default {
-        name: 'blogpost',
+        name: 'allposts',
 
         data() {
             return {
                 allPost: this.$store.state.blogs,
             }
         },
-        methods: {
-            removeItems(post){
-                this.$store.commit('removeItems', post)
-            }
-            
-        },
-        components : {
-            editpost,
-        }
     }
 </script>
 <style scoped>

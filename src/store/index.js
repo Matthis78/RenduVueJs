@@ -9,7 +9,7 @@ export default createStore({
       title: 'this.metaTitle',
       desc: 'metaDesc',
       content: 'metaPost',
-      img: '../assets/logo.png',
+      img: '',
       id  : '0',
     }]
   },
