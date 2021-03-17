@@ -18,7 +18,7 @@
     </div>
 </template>
 <script>
-import editpost from '@/components/editpost.vue'
+    import editpost from '@/components/editpost.vue'
     export default {
         name: 'blogpost',
 
@@ -28,12 +28,12 @@ import editpost from '@/components/editpost.vue'
             }
         },
         methods: {
-            removeItems(post){
+            removeItems(post) {
                 this.$store.commit('removeItems', post)
             }
-            
+
         },
-        components : {
+        components: {
             editpost,
         }
     }

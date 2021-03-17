@@ -1,7 +1,7 @@
 <template>
     <adminpage></adminpage>
     <div class="center">
-    <blogpost></blogpost>
+        <blogpost></blogpost>
     </div>
 </template>
 <script>
@@ -18,9 +18,8 @@
     }
 </script>
 <style scoped>
-.center {
-    display: table;
-    margin: 0 auto;
-}
-
+    .center {
+        display: table;
+        margin: 0 auto;
+    }
 </style>

@@ -40,7 +40,7 @@
                     desc: this.metaDesc,
                     content: this.metaContent,
                     img: this.image,
-                    id : this.$store.state.blogs.length
+                    id: this.$store.state.blogs.length
 
                 }
                 this.$store.commit('createNewPage', post)

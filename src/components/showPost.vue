@@ -7,21 +7,19 @@
         name: 'showPost',
         data() {
             return {
-               
+
             }
         },
-         methods: {
+        methods: {
             showpagePostDetails() {
-               
+
                 this.$router.push('/admin/blogPostDetails')
             }
 
         }
-       
+
     }
 </script>
 <style scoped>
     /*showPost*/
-
-   
 </style>

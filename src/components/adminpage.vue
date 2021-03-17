@@ -15,6 +15,7 @@
         justify-content: flex-end;
         max-width: 80%;
     }
+
     button {
         font-size: 20px;
 

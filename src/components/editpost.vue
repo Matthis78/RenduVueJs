@@ -19,7 +19,7 @@
 <script>
     export default {
         name: 'editpost',
-        props : ['id'],
+        props: ['id'],
         data() {
             return {
                 metaName: '',
@@ -27,8 +27,8 @@
                 metaDesc: '',
                 metaContent: '',
                 image: '',
-                show : 'none',
-                
+                show: 'none',
+
             }
         },
         methods: {
@@ -39,17 +39,16 @@
                     desc: this.metaDesc,
                     content: this.metaContent,
                     img: this.image,
-                    id : id
+                    id: id
                 }
                 this.$store.commit('updatePost', post);
             },
-            edit(){
-                
+            edit() {
 
-                if(this.show === 'none'){
+
+                if (this.show === 'none') {
                     this.show = 'block';
-                }
-                else{
+                } else {
                     this.show = 'none';
                 }
 
