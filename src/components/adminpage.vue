@@ -20,4 +20,8 @@
         font-size: 20px;
 
     }
+    div a {
+        text-decoration: none;
+        color: black;
+        }
 </style>

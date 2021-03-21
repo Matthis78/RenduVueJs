@@ -6,9 +6,6 @@
             <img class="fit-picture" src="../assets/logo.png">
         </div>
         <div>
-            <p>{{ post.content }} </p>
-            <p>{{ post.title }} </p>
-            <p>{{ post.name }} </p>
             <p>{{ post.desc }} </p>
         </div>
         <router-link :to="{name: 'singlePost', params:{id:post.id}}">Voir plus</router-link>
@@ -48,8 +45,13 @@
         margin-top: 30px;
     }
 
-    .p {
-        max-width: 80%;
+    p {
+        max-width: 300px;
+        margin: 30px;
+    }
+    a {
+        text-decoration: none;
+        color: black;
     }
 
     .edit {

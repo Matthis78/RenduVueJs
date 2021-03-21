@@ -6,10 +6,8 @@
             <img class="fit-picture" src="../assets/logo.png">
         </div>
         <div>
-            <p>{{ post.content }} </p>
-            <p>{{ post.title }} </p>
-            <p>{{ post.name }} </p>
             <p>{{ post.desc }} </p>
+           
         </div>
         <div>
             <button class="delete" @click="removeItems(post)"><i class="fas fa-trash fa-2x"></i></button>
@@ -50,6 +48,7 @@
         border: none;
         background-color: red;
         color: #fff;
+        margin: 30px;
     }
 
     .container {
@@ -68,5 +67,8 @@
     .edit {
         margin-right: 20px;
         font-size: 20px;
+    }
+    p {
+        max-width: 300px;
     }
 </style>
